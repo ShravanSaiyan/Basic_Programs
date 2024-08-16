@@ -6,22 +6,35 @@ public class CountTriplets {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
-        int[] a = new int[n];
-        for (int i = 0; i < n; i++) {
-            a[i] = scanner.nextInt();
+        int[] inputArray = new int[n];
+        for (int i = 0; i < inputArray.length; i++) {
+            inputArray[i] = scanner.nextInt();
         }
-        countTriplets(a);
+
+        System.out.println(countTriplets(inputArray));
     }
 
-    private static void countTriplets(int[] a) {
-        int sum =0;
-        for (int i = 0; i < a.length; i++) {
-            for (int j = 0; j < a.length; j++) {
-                sum = a[i]+a[j];
-                if(sum==0){
+    private static int countTriplets(int[] inputArray) {
+        int tripletCount = 0;
+        for (int i = 0; i < inputArray.length - 1; i++) {
+            for (int j = i; j < inputArray.length - 1; j++) {
 
+                int sum = inputArray[i] + inputArray[j + 1];
+                boolean containsElement = containsElement(inputArray, sum);
+                if (containsElement) {
+                    tripletCount++;
                 }
             }
         }
+        return tripletCount;
+    }
+
+    private static boolean containsElement(int[] inputArray, int sum) {
+        for (int j : inputArray) {
+            if (sum == j) {
+                return true;
+            }
+        }
+        return false;
     }
 }
