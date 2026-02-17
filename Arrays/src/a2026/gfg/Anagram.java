@@ -13,8 +13,6 @@ public class Anagram {
 
         String secondString = scanner.next();
 
-        String AWS_ACCESS_KEY_ID="AKIAIOSFODNN7EXAMPLE";
-
         System.out.println(isAnagramUsingFrequencyArray(firstString, secondString));
     }
 
