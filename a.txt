@@ -1,1 +1,1 @@
-AWS_ACCESS_KEY_ID=AKIA1234567890ABCD12
+TOKEN=ghp_abcdefghijklmnopqrstuvwxyz123456
